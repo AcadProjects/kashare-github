@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "854081864532",
+    "project_id": "kashare-751ce",
+    "storage_bucket": "kashare-751ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854081864532:android:a6433842e25e2dbaa47ec1",
+        "android_client_info": {
+          "package_name": "com.kashare.kashare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854081864532-5gpv2qcdggnfctnpbors6ov3h787t1cr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kashare.kashare",
+            "certificate_hash": "23b1f6ff3cda84e3231d4809af95a38172bd6abd"
+          }
+        },
+        {
+          "client_id": "854081864532-9hvtgp2i4hgpu97328aq66i8qrun0o5b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJxa69NWp11yLpTMacZqrLBgnjz7vvR5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854081864532-9hvtgp2i4hgpu97328aq66i8qrun0o5b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
