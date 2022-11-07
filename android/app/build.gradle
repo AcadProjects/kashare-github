@@ -51,7 +51,8 @@ android {
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
-        //versionName flutterVersionName
+        versionName flutterVersionName
+
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -77,6 +78,7 @@ dependencies {
                 exclude group: 'group_name', module: 'module_name'
             }
             implementation('com.google.android.gms:play-services-location:16.0.0')
+    implementation ('com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0')
 }
 
 plugins {
