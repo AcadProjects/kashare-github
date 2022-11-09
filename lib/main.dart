@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
                 child: Text('Login with Google'),
               ),
               MaterialButton(
-                onPressed: () => authService.signOut()
+                onPressed: () => authService.signOut(),
                 color: Colors. red,
                 textColor: Colors.black,
                 child: Text('Logout'),
@@ -35,10 +35,10 @@ class MyApp extends StatelessWidget {
             ]
           )
         ),
-        brightness: Brightness.light,
-        primarySwatch: Colors.green,
+       // brightness: Brightness.light,
+       // primarySwatch: Colors.green,
       ),
-      home: MainPage(),
+     // home: MainPage(),
     );
   }
 }
@@ -50,17 +50,17 @@ class UserProfile extends StatefulWidget {
 }
 
 class UserProfileState extends State<UserProfile> {
-  Map<String, dynamic> _profile;
+  late Map<String, dynamic> _profile;
   bool _loading = false;
 
   @override
   initState() {
     super.initState();
-    authService.profuke 
+    authService.profile
       .listen((state)=> setState(() => _profile = state));
 
     authService.loading
-      .listen((state) => setState(() => _loading = state);
+      .listen((state) => setState(() => _loading = state));
 
 
   }
@@ -81,25 +81,30 @@ class UserProfileState extends State<UserProfile> {
 class LoginButton extends StatelessWidget {
   
   @override
-  Widget build(BuildContxt context){
+  Widget build(BuildContext context){
     return StreamBuilder(
       stream: authService.user,
-      builder: (context, snapshit){
-        if(snapsothasData) {
-          MaterialButton(
-                onPressed: () => authService.googleSignIn(),
-                color: Colors. white,
-                textColor: Colors.black,
-                child: Text('Login with Google'),
-        } else {
+      builder: (context, snapshot)
+    {
+      if (snapshot.hasData) {
         MaterialButton(
-                onPressed: () => authService.signOut()
-                color: Colors. red,
-                textColor: Colors.black,
-                child: Text('Logout'),
-              )
-        }
+            onPressed: () => authService.googleSignIn(),
+            color: Colors.white,
+            textColor: Colors.black,
+            child: Text('Login with Google')
+        );
+      } else {
+        MaterialButton(
+          onPressed: () => authService.signOut(),
+          color: Colors.red,
+          textColor: Colors.black,
+          child: Text('Logout'),
+        );
       }
+    }
+
+
+
     );
   }
 }
