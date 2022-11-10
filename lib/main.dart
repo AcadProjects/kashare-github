@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:kashare/screens/mainpage.dart';
 import 'auth.dart';
+// @dart=2.9
+
+
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
   @override
+  const MyApp({Key? key}) : super(key: key);
+  
   Widget build(BuildContext context) {
     return MaterialApp(
-      themeMode: ThemeMode.light,
+      //themeMode: ThemeMode.light,
       title: 'KaShare',
       home: Scaffold(
         appBar: AppBar(
           title: Text('KaShare'),
+          backgroundColor: Colors.green,
         ),
         body: Center(
           child: Column(
@@ -46,7 +51,6 @@ class MyApp extends StatelessWidget {
 class UserProfile extends StatefulWidget {
   @override
   UserProfileState createState() => UserProfileState();
-
 }
 
 class UserProfileState extends State<UserProfile> {
@@ -56,13 +60,8 @@ class UserProfileState extends State<UserProfile> {
   @override
   initState() {
     super.initState();
-    authService.profile
-      .listen((state)=> setState(() => _profile = state));
-
-    authService.loading
-      .listen((state) => setState(() => _loading = state));
-
-
+    authService.profile.listen((state) => setState(() => _profile = state));
+    authService.loading.listen((state) => setState(() => _loading = state));
   }
   @override
   Widget build(BuildContext context) {
@@ -79,30 +78,27 @@ class UserProfileState extends State<UserProfile> {
 }
 
 class LoginButton extends StatelessWidget {
-  
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: authService.user,
-      builder: (context, snapshot)
-    {
-      if (snapshot.hasData) {
-        MaterialButton(
-            onPressed: () => authService.googleSignIn(),
-            color: Colors.white,
-            textColor: Colors.black,
-            child: Text('Login with Google')
-        );
-      } else {
-        MaterialButton(
-          onPressed: () => authService.signOut(),
-          color: Colors.red,
-          textColor: Colors.black,
-          child: Text('Logout'),
-        );
-      }
-    }
-
+        stream: authService.user,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            MaterialButton(
+                onPressed: () => authService.googleSignIn(),
+                color: Colors.white,
+                textColor: Colors.black,
+                child: Text('Login with Google')
+            );
+          } else {
+            MaterialButton(
+              onPressed: () => authService.signOut(),
+              color: Colors.red,
+              textColor: Colors.black,
+              child: Text('Logout'),
+            );
+          }
+        }
 
 
     );
