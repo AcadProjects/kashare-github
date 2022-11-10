@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kashare/services/auth.dart';
 
 class SignIn extends StatefulWidget {
 	@override
