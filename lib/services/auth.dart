@@ -1,23 +1,26 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
-	final FirebaseAuth _auth = FirebaseAuth.instance;
 
-	//Anonymous Sign In
-	Future signInAnon() async {
-		try {
-		 AuthResult result = await _auth.signInAnonymously(); //Dapat nakaenable ito sa firebase authentication as anonymous
-		FirebaseUser user = result.user;
-		return user;
-		} catch(e) {
-			print(e.toString());
-			return null;
-		}
-	}
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
-	//Email and Password Sign In
+  // sign in anon
+  Future signInAnon() async {
+    try {
+      AuthResult result = await _auth.signInAnonymously();
+      FirebaseUser user = result.user;
+      return user;
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
 
-	//Register with Emaul and Pasword
+  // sign in with email and password
 
-	//Sign Out
+
+  // register with email and password
+
+  // sign out
+
 }
