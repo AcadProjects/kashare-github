@@ -31,9 +31,9 @@ class MyApp extends StatelessWidget {
                 color: Colors. red,
                 textColor: Colors.black,
                 child: Text('Logout'),
-              )
-            ]
-          )
+              ) //Material Button
+            ], // <Widget>[]
+          ), // Column
         ),
        // brightness: Brightness.light,
        // primarySwatch: Colors.green,

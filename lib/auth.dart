@@ -8,11 +8,11 @@ class AuthService {
 	final FirebaseAuth _auth = FirebaseAuth.instance;
 	final Firestore _db = Firebase.instance;
 
-	Observable<FirebaseUser> user; 
-	Observable<Map<String, dynamic>> profile;
+	Observable<FirebaseUser> user; //firebase user 
+	Observable<Map<String, dynamic>> profile; //Custom user data in Firestore
 	PublishSubject loading = PublishSubject();
-
-	AuthService(){
+	//Constructor
+	AuthService(){ 
 		user = Observable(_auth.onAuthStateChanged);
 		profile = user.switchMap((FirebaseUser u){
 			if(u != null){
@@ -39,7 +39,7 @@ class AuthService {
 
 	}
 
-	void updtaeUserData(FirebaseUser user) async {
+	void updateUserData(FirebaseUser user) async {
 		DocumentReference ref = _db.collection('users').document(user.id);
 
 		return ref.setData({
