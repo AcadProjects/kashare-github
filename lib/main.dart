@@ -1,3 +1,62 @@
+
+import 'package:flutter/material.dart';
+import 'package:kashare/screens/wrapper.dart';
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      home: Wrapper(),
+     // backgroundColor: Colors.green,
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 import 'package:flutter/material.dart';
 import 'package:kashare/screens/mainpage.dart';
 import 'auth.dart';
@@ -104,3 +163,4 @@ class LoginButton extends StatelessWidget {
     );
   }
 }
+*/

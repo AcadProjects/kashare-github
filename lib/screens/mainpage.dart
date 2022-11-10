@@ -1,3 +1,5 @@
+/*  ---------------------- temporary comment muna----------
+
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -21,7 +23,7 @@ class _MainPageState extends State<MainPage> {
   }
 
 }
-/*  ---------------------- temporary comment muna----------
+
 @override
   Widget build(BuildContext context) {
     return Scaffold(
