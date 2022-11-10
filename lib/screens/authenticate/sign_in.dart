@@ -22,7 +22,13 @@ class _SignInState extends State<SignIn> {
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-        child: RaisedButton(
+        child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          primary: Colors.green,
+          shape: RoundedRectangleBorder(
+          	borderRadius: BorderRadius.circular(100.0),
+          	),
+          ),
           child: Text('Sign In Anonymusly'),
           onPressed: () async {
             dynamic result = await _auth.signInAnon();
@@ -33,6 +39,7 @@ class _SignInState extends State<SignIn> {
               print(result);
             }
           },
+        	
         ),
       ),
     );
