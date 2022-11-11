@@ -1,15 +1,20 @@
-
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:kashare/screens/wrapper.dart';
+import 'package:kashare/models/myuser.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context){
-    return MaterialApp(
+    return StreamProvider<MyUser?>.value(
+      initialData: null,
+      value: AuthService().user,
+      child: MaterialApp(
       home: Wrapper(),
-     // backgroundColor: Colors.green,
-    );
+      ), //MaterialApp
+    ); //StreamProvider.value
   }
 }
 

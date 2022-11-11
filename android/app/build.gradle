@@ -76,15 +76,13 @@ dependencies {
             implementation ('com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.1') {
                 exclude group: 'group_name', module: 'module_name'
             }
-            implementation('com.google.android.gms:play-services-location:16.0.0')
+    implementation('com.google.android.gms:play-services-location:16.0.0')
     implementation ('com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0')
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0'
 
 }
 
 plugins {
     id 'com.android.application'
-
     // Add the Google services Gradle plugin
     id 'com.google.gms.google-services'
 
