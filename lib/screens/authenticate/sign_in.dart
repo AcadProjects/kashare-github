@@ -29,7 +29,7 @@ class _SignInState extends State<SignIn> {
           	borderRadius: BorderRadius.circular(100.0),
           	),
           ),
-          child: Text('Sign In Anonymusly'),
+          child: Text('Sign In Anonymously'),
           onPressed: () async {
             dynamic result = await _auth.signInAnon();
             if(result == null){

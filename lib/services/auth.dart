@@ -1,19 +1,20 @@
+//import 'package:kashare/models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:kashare/models/user.dart';
 
 class AuthService {
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  User _userFromFirebaseUser(FirebaseUser user) {
-  	return user != null ?  User(uid: user.uid) : null;
-  } 
+  // Create user object based on firebase user
+  User _userFromFirebaseUser(User user) {
+    return user != null ? User(uid: user.uid) : null;
+  }
 
   // Sign In Anonymously
   Future signInAnon() async {
     try {
-      AuthResult result = await _auth.signInAnonymously();
-      FirebaseUser user = result.user;
+      UserCredential result = await _auth.signInAnonymously();
+      User user = result.user;
       return _userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());
