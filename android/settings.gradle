@@ -25,7 +25,7 @@ repositories {
             // This should always be `mapbox` (not your username).
             username = "mapbox"
             // Use the secret token you stored in gradle.properties as the password
-            password = MAPBOX_DOWNLOADS_TOKEN
+            password = pk.eyJ1IjoiYW5naGVseiIsImEiOiJjbDd2anV6NHUwYzh4M3ZveHdudGQ0dHU1In0.m5vUkL5mWj1JxmojY55ZCg
         }
     }
 }}
