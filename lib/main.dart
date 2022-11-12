@@ -4,12 +4,16 @@ import 'package:kashare/screens/wrapper.dart';
 import 'package:kashare/models/myuser.dart';
 import 'package:kashare/services/auth.dart';
 //import 'package:flutter/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return StreamProvider<MyUser?>.value(
+      Future: Firebase.initializeApp(),
       initialData: null,
       value: AuthService().user,
       child: MaterialApp(

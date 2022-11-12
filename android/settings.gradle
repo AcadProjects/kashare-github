@@ -23,9 +23,10 @@ repositories {
         credentials {
             // Do not change the username below.
             // This should always be `mapbox` (not your username).
-            username = "mapbox"
+            username = 'mapbox'
             // Use the secret token you stored in gradle.properties as the password
-            password =  project.properties['pk.eyJ1IjoiYW5naGVseiIsImEiOiJjbDd2anV6NHUwYzh4M3ZveHdudGQ0dHU1In0.m5vUkL5mWj1JxmojY55ZCg'] ?: ""
+            password = 'pk.eyJ1IjoiYW5naGVseiIsImEiOiJjbDd2anV6NHUwYzh4M3ZveHdudGQ0dHU1In0.m5vUkL5mWj1JxmojY55ZCg'
+            //password = kashare.properties['-Xmx1536M'] ?: ""
         }
     }
 }}
