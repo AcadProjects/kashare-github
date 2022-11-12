@@ -95,6 +95,7 @@ class _RegisterState extends State<Register> {
                 },
               ), //TextFormField - Email
 //
+
               SizedBox(height: 20.0),
               TextFormField(
                 decoration: InputDecoration(
@@ -112,23 +113,7 @@ class _RegisterState extends State<Register> {
                 },
               ), //TextFormField - Address
 //
-              SizedBox(height: 20.0),
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Email',
-                  fillColor: Colors.white,
-                  filled: true,
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white, width: 2.0)),
-                  focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey, width: 2.0)),
-                ),
-                validator: (val) => val!.isEmpty ? 'Enter your email' : null,
-                onChanged: (val) {
-                  setState(() => email = val.trim());
-                },
-              ), //TextFormField - Email
-//
+
               SizedBox(height: 20.0),
               TextFormField(
                 keyboardType: TextInputType.number,
