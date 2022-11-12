@@ -7,17 +7,30 @@ import 'package:kashare/services/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-void main() => runApp(MyApp());
+//void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    // Replace with actual values
+    options: FirebaseOptions(
+      apiKey: "AIzaSyDJxa69NWp11yLpTMacZqrLBgnjz7vvR5I",
+      //  appId: "kashare-751ce",
+      messagingSenderId: "854081864532",
+      projectId: "kashare-751ce",
+    ),
+  );
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return StreamProvider<MyUser?>.value(
-      Future: Firebase.initializeApp(),
+      // Future: Firebase.initializeApp(),
       initialData: null,
       value: AuthService().user,
       child: MaterialApp(
-      home: Wrapper(),
+        home: Wrapper(),
       ), //MaterialApp
     ); //StreamProvider.value
   }
