@@ -79,6 +79,19 @@ class _SignInState extends State<SignIn> {
                 error,
                 style: TextStyle(color: Colors.red, fontSize: 14.0),
               ),
+              SizedBox(height: 20.0),
+              ElevatedButton(
+                child: Text('Sign In Using Google'),
+                onPressed: () async {
+                  dynamic result = await _auth.signInAnon();
+                  if (result == null) {
+                    print('Error Signing In');
+                  } else {
+                    print('Signed In');
+                    print(result.uid);
+                  }
+                },
+              )
             ],
           ),
         ),

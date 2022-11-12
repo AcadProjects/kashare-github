@@ -41,16 +41,125 @@ class _RegisterState extends State<Register> {
           key: _formKey,
           child: Column(
             children: <Widget>[
+//
               SizedBox(height: 20.0),
               TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'First Name',
+                  fillColor: Colors.white,
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 2.0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2.0)),
+                ),
+                validator: (val) => val!.isEmpty ? 'Enter First Name' : null,
+                onChanged: (val) {
+                  setState(() => email = val.trim());
+                },
+              ), //TextFormField - First Name
+//
+              SizedBox(height: 20.0),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Last Name',
+                  fillColor: Colors.white,
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 2.0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2.0)),
+                ),
+                validator: (val) => val!.isEmpty ? 'Enter Last Name' : null,
+                onChanged: (val) {
+                  setState(() => email = val.trim());
+                },
+              ), //TextFormField - Last Name
+//
+
+//
+              SizedBox(height: 20.0),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  fillColor: Colors.white,
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 2.0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2.0)),
+                ),
                 validator: (val) => val!.isEmpty ? 'Enter your email' : null,
                 onChanged: (val) {
                   setState(() => email = val.trim());
                 },
               ), //TextFormField - Email
+//
+              SizedBox(height: 20.0),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Address',
+                  fillColor: Colors.white,
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 2.0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2.0)),
+                ),
+                validator: (val) => val!.isEmpty ? 'Enter your Address' : null,
+                onChanged: (val) {
+                  setState(() => email = val.trim());
+                },
+              ), //TextFormField - Address
+//
+              SizedBox(height: 20.0),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  fillColor: Colors.white,
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 2.0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2.0)),
+                ),
+                validator: (val) => val!.isEmpty ? 'Enter your email' : null,
+                onChanged: (val) {
+                  setState(() => email = val.trim());
+                },
+              ), //TextFormField - Email
+//
+              SizedBox(height: 20.0),
+              TextFormField(
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  hintText: 'Phone Number',
+                  fillColor: Colors.white,
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 2.0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2.0)),
+                ),
+                validator: (val) =>
+                    val!.isEmpty ? 'Enter your Phone Number' : null,
+                onChanged: (val) {
+                  setState(() => email = val.trim());
+                },
+              ), //TextFormField - Phone Number
+//
               SizedBox(height: 40.0),
 
               TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  fillColor: Colors.white,
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 2.0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2.0)),
+                ),
                 obscureText: true,
                 validator: (val) => val!.length < 7
                     ? 'Enter a password (Must be greater than 7 characters)'
@@ -61,6 +170,15 @@ class _RegisterState extends State<Register> {
               ), //TextFormField - Password
 
               TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Confirm Password',
+                  fillColor: Colors.white,
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 2.0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2.0)),
+                ),
                 obscureText: true,
                 validator: (val) => val!.length < 7 ? 'Confirm Password' : null,
                 onChanged: (val) {
