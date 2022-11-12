@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kashare/screens/wrapper.dart';
 import 'package:kashare/models/myuser.dart';
 import 'package:kashare/services/auth.dart';
-
-
+//import 'package:flutter/firebase_options.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

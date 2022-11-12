@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kashare/services/auth.dart';
 
-
 class SignIn extends StatefulWidget {
   @override
   _SignInState createState() => _SignInState();
@@ -14,7 +13,7 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[100],
+      backgroundColor: Colors.green[300],
       appBar: AppBar(
         backgroundColor: Colors.green[400],
         elevation: 0.0,
