@@ -2,6 +2,8 @@ import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:kashare/screens/wrapper.dart';
 import 'package:kashare/models/myuser.dart';
+import 'package:kashare/services/auth.dart';
+
 
 void main() => runApp(MyApp());
 

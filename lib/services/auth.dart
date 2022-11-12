@@ -15,8 +15,6 @@ class AuthService {
     return _auth.authStateChanges().map((User? user) => _userFromFirebaseUser(user!));
   }
 
-
-
   // Sign In Anonymously
   Future signInAnon() async {
     try {
