@@ -14,7 +14,7 @@ void main() async {
     // Replace with actual values
     options: FirebaseOptions(
       apiKey: "AIzaSyDJxa69NWp11yLpTMacZqrLBgnjz7vvR5I",
-      //  appId: "kashare-751ce",
+      appId: "kashare-751ce",
       messagingSenderId: "854081864532",
       projectId: "kashare-751ce",
     ),

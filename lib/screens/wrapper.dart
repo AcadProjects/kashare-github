@@ -5,13 +5,17 @@ import 'package:provider/provider.dart';
 import 'package:kashare/models/myuser.dart';
 
 class Wrapper extends StatelessWidget {
-	@override
-	Widget build(BuildContext context){
+  @override
+  Widget build(BuildContext context) {
+    final user = Provider.of<MyUser?>(context);
+    print(user);
+    //return either Home or Authenticate Widget
 
-		final user = Provider.of<MyUser?>(context);
-		print(user);
-
-		//return either Home or Authenticate Widget
-		return Authenticate();
-	}
+    // return Authenticate();
+    if (user == null) {
+      return Authenticate();
+    } else {
+      return Home();
+    }
+  }
 }

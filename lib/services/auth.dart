@@ -2,7 +2,6 @@ import 'package:kashare/models/myuser.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
-
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // Create user object based on firebase user
@@ -12,7 +11,9 @@ class AuthService {
 
   //auth change user stream
   Stream<MyUser?> get user {
-    return _auth.authStateChanges().map((User? user) => _userFromFirebaseUser(user!));
+    return _auth
+        .authStateChanges()
+        .map((User? user) => _userFromFirebaseUser(user!));
   }
 
   // Sign In Anonymously
@@ -29,9 +30,15 @@ class AuthService {
 
   // sign in with email and password
 
-
   // register with email and password
 
   // sign out
-
+  Future signOut() async {
+    try {
+      return await _auth.signOut();
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
 }
