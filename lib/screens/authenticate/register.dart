@@ -50,7 +50,7 @@ class _RegisterState extends State<Register> {
                 child: Column(
                   children: <Widget>[
 //
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 10.0),
                     TextFormField(
                       decoration:
                           textInputDecoration.copyWith(hintText: 'First Name'),
@@ -61,7 +61,7 @@ class _RegisterState extends State<Register> {
                       },
                     ), //TextFormField - First Name
 //
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 10.0),
                     TextFormField(
                       decoration:
                           textInputDecoration.copyWith(hintText: 'Last Name'),
@@ -74,7 +74,7 @@ class _RegisterState extends State<Register> {
 //
 
 //
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 10.0),
                     TextFormField(
                       decoration:
                           textInputDecoration.copyWith(hintText: 'Email'),
@@ -86,7 +86,7 @@ class _RegisterState extends State<Register> {
                     ), //TextFormField - Email
 //
 
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 10.0),
                     TextFormField(
                       decoration:
                           textInputDecoration.copyWith(hintText: 'Address'),
@@ -98,7 +98,7 @@ class _RegisterState extends State<Register> {
                     ), //TextFormField - Address
 //
 
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 10.0),
                     TextFormField(
                       keyboardType: TextInputType.number,
                       decoration: textInputDecoration.copyWith(
@@ -110,7 +110,7 @@ class _RegisterState extends State<Register> {
                       },
                     ), //TextFormField - Phone Number
 //
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 10.0),
                     TextFormField(
                       decoration:
                           textInputDecoration.copyWith(hintText: 'Password'),
@@ -134,7 +134,7 @@ class _RegisterState extends State<Register> {
                       },
                     ), //TextFormField - Confirm Password
 
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 10.0),
                     ElevatedButton(
                         // Colors.green[400],
                         child: Text(

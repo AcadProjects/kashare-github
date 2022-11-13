@@ -5,12 +5,14 @@ import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:kashare/screens/home/kashare_list.dart';
 import 'package:kashare/models/kashare.dart';
+import 'package:kashare/screens/home/mappage.dart';
 
 class Home extends StatelessWidget {
   final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
+    //	return Container(
     void _showSettingsPanel() {
       showModalBottomSheet(
           context: context,
@@ -22,34 +24,33 @@ class Home extends StatelessWidget {
           });
     }
 
-    //	return Container(
     return StreamProvider<List<Kashare?>>.value(
-        initialData: [],
-        value: DatabaseService(uid: '').kashare,
-        child: Scaffold(
-          backgroundColor: Colors.green[300],
-          appBar: AppBar(
-            title: Text('KaShare'),
-            backgroundColor: Colors.green[400],
-            elevation: 0.0,
-            actions: <Widget>[
-              ElevatedButton.icon(
-                icon: Icon(Icons.person),
-                label: Text('Logout'),
-                onPressed: () async {
-                  await _auth.signOut();
-                },
-              ),
-              ElevatedButton.icon(
-                icon: Icon(Icons.settings),
-                label: Text('Settings'),
-                onPressed: () => _showSettingsPanel(),
-              )
-            ],
-          ),
-          body: KashareList(),
-        ));
-    //child: Text('KaShare'),
-    //); //Container
+      initialData: [],
+      value: DatabaseService(uid: '').kashare,
+      child: Scaffold(
+        backgroundColor: Colors.green[300],
+        appBar: AppBar(
+          title: Text('KaShare'),
+          backgroundColor: Colors.green[400],
+          elevation: 0.0,
+          actions: <Widget>[
+            ElevatedButton.icon(
+              icon: Icon(Icons.person),
+              label: Text('Logout'),
+              onPressed: () async {
+                await _auth.signOut();
+              },
+            ),
+            ElevatedButton.icon(
+              icon: Icon(Icons.settings),
+              label: Text('Settings'),
+              onPressed: () => _showSettingsPanel(),
+            )
+          ],
+        ),
+        // body: KashareList(),
+        body: MapPage(),
+      ),
+    );
   }
 }
