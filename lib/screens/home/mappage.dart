@@ -6,7 +6,7 @@ import 'package:kashare/models/map_marker_model.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MapPage extends StatefulWidget {
-  const MapPage({Key? key}) : super(key: key);
+  MapPage({Key? key}) : super(key: key);
 //MarkerLayerOptions({Key? key, List<Marker> markers = const [], dynamic rebuild})
   @override
   State<MapPage> createState() => _MapPageState();
@@ -43,7 +43,7 @@ class _MapPageState extends State<MapPage> with TickerProviderStateMixin {
               zoom: 11,
               center: LatLng(14.7861079261, 121.032138605),
             ),
-            a: [
+            layers: [
               TileLayer(
                 urlTemplate:
                     "https://api.mapbox.com/styles/v1/anghelz/cla7wwzq8000k14sak5ymmdf6/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiYW5naGVseiIsImEiOiJjbDd2anV6NHUwYzh4M3ZveHdudGQ0dHU1In0.m5vUkL5mWj1JxmojY55ZCg",
