@@ -5,8 +5,8 @@ import 'package:kashare/shared/loading.dart';
 
 class Register extends StatefulWidget {
   final toggleView;
-  //Register({this.toggleView});
-  const Register({Key? key, this.toggleView}) : super(key: key);
+  Register({this.toggleView});
+  //const Register({Key? key, this.toggleView}) : super(key: key);
 
   @override
   _RegisterState createState() => _RegisterState();
@@ -148,7 +148,7 @@ class _RegisterState extends State<Register> {
                               setState(() => error = 'Enter valid email');
                               loading = false;
                             }
-                          } else {}
+                          }
 
                           //
                           //
