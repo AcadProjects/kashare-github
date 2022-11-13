@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
 import 'package:kashare/models/kashare.dart';
-import 'package:kashare/screens/home/kashare_list.dart';
+import 'package:kashare/screens/home/kashare_tile.dart';
 
 class KashareList extends StatefulWidget {
   @override
