@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kashare/models/myuser.dart';
 import 'package:kashare/shared/constants.dart';
+import 'package:kashare/models/myuser.dart';
 
 class SettingsForm extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _SettingsFormState extends State<SettingsForm> {
 
   @override
   Widget build(BuildContext context) {
-    var myUserData;
+    ;
     return Form(
       key: _formKey,
       child: Column(
@@ -46,10 +47,9 @@ class _SettingsFormState extends State<SettingsForm> {
             onChanged: (val) => setState(() => _currentDestination),
           ),
           Slider(
-            value: (_currentDistance ?? myUserData.distance).toDouble(),
-            activeColor: Colors.green[_currentDistance ?? myUserData.distance],
-            inactiveColor:
-                Colors.green[_currentDistance ?? myUserData.distance],
+            value: (_currentDistance ?? UserData.distance).toDouble(),
+            activeColor: Colors.green[_currentDistance ?? UserData.distance],
+            inactiveColor: Colors.green[_currentDistance ?? UserData.distance],
             min: 100,
             max: 900,
             divisions: 8,
@@ -80,5 +80,3 @@ class _SettingsFormState extends State<SettingsForm> {
     );
   }
 }
-
-class UserData {}
