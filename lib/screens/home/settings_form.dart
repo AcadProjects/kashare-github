@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kashare/models/myuser.dart';
 import 'package:kashare/shared/constants.dart';
 
 class SettingsForm extends StatefulWidget {
@@ -17,12 +18,13 @@ class _SettingsFormState extends State<SettingsForm> {
 
   @override
   Widget build(BuildContext context) {
+    var myUserData;
     return Form(
       key: _formKey,
       child: Column(
         children: <Widget>[
           Text(
-            'Update your brew settings.',
+            'Update Ride Settings.',
             style: TextStyle(fontSize: 18.0),
           ),
           SizedBox(height: 20.0),
@@ -43,6 +45,16 @@ class _SettingsFormState extends State<SettingsForm> {
             }).toList(),
             onChanged: (val) => setState(() => _currentDestination),
           ),
+          Slider(
+            value: (_currentDistance ?? myUserData.distance).toDouble(),
+            activeColor: Colors.green[_currentDistance ?? myUserData.distance],
+            inactiveColor:
+                Colors.green[_currentDistance ?? myUserData.distance],
+            min: 100,
+            max: 900,
+            divisions: 8,
+            onChanged: (val) => setState(() => _currentDistance = val.round()),
+          ),
           SizedBox(height: 10.0),
           ElevatedButton(
               child: Text(
@@ -61,9 +73,12 @@ class _SettingsFormState extends State<SettingsForm> {
               onPressed: () async {
                 print(_currentName);
                 print(_currentDestination);
+                print(_currentDistance);
               }),
         ],
       ),
     );
   }
 }
+
+class UserData {}
