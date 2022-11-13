@@ -11,6 +11,17 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void _showSettingsPanel() {
+      showModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return Container(
+              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
+              child: Text('Ride'),
+            );
+          });
+    }
+
     //	return Container(
     return StreamProvider<List<Kashare?>>.value(
         initialData: [],
@@ -28,6 +39,11 @@ class Home extends StatelessWidget {
                 onPressed: () async {
                   await _auth.signOut();
                 },
+              ),
+              ElevatedButton.icon(
+                icon: Icon(Icons.settings),
+                label: Text('Settings'),
+                onPressed: () => _showSettingsPanel(),
               )
             ],
           ),

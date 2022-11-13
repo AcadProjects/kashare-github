@@ -18,7 +18,11 @@ class _RegisterState extends State<Register> {
   bool loading = false;
   // text field state
   String email = '';
+  String firstname = '';
+  String lastname = '';
   String password = '';
+  int? phonenumber;
+  String address = '';
   String error = '';
 
   @override
@@ -53,7 +57,7 @@ class _RegisterState extends State<Register> {
                       validator: (val) =>
                           val!.isEmpty ? 'Enter First Name' : null,
                       onChanged: (val) {
-                        setState(() => email = val.trim());
+                        setState(() => firstname = val);
                       },
                     ), //TextFormField - First Name
 //
@@ -64,7 +68,7 @@ class _RegisterState extends State<Register> {
                       validator: (val) =>
                           val!.isEmpty ? 'Enter Last Name' : null,
                       onChanged: (val) {
-                        setState(() => email = val.trim());
+                        setState(() => lastname = val);
                       },
                     ), //TextFormField - Last Name
 //
@@ -77,7 +81,7 @@ class _RegisterState extends State<Register> {
                       validator: (val) =>
                           val!.isEmpty ? 'Enter your email' : null,
                       onChanged: (val) {
-                        setState(() => email = val.trim());
+                        setState(() => email = val);
                       },
                     ), //TextFormField - Email
 //
@@ -89,7 +93,7 @@ class _RegisterState extends State<Register> {
                       validator: (val) =>
                           val!.isEmpty ? 'Enter your Address' : null,
                       onChanged: (val) {
-                        setState(() => email = val.trim());
+                        setState(() => address = val);
                       },
                     ), //TextFormField - Address
 //
@@ -102,7 +106,7 @@ class _RegisterState extends State<Register> {
                       validator: (val) =>
                           val!.isEmpty ? 'Enter your Phone Number' : null,
                       onChanged: (val) {
-                        setState(() => email = val.trim());
+                        setState(() => phonenumber);
                       },
                     ), //TextFormField - Phone Number
 //
