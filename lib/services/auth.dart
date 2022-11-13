@@ -1,5 +1,7 @@
 import 'package:kashare/models/myuser.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:kashare/services/database.dart';
+import 'package:kashare/services/database.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -47,6 +49,9 @@ class AuthService {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       User? user = result.user;
+
+      DatabaseService(uid: user?.uid)
+          .updateUserData('name', 'location', 'destination', 15, 120);
       return _userFromFirebaseUser(user!);
     } catch (e) {
       print(e.toString());
