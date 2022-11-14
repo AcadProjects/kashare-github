@@ -6,7 +6,7 @@ import 'package:kashare/models/map_marker_model.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MapPage extends StatefulWidget {
-  MapPage({Key? key}) : super(key: key);
+  const MapPage({Key? key}) : super(key: key);
 //MarkerLayerOptions({Key? key, List<Marker> markers = const [], dynamic rebuild})
   @override
   State<MapPage> createState() => _MapPageState();
@@ -18,6 +18,8 @@ class _MapPageState extends State<MapPage> with TickerProviderStateMixin {
   var currentLocation = MapConstants.myLocation;
 
   late final MapController mapController;
+  
+  get layer => null;
 
   @override
   void initState() {
@@ -43,15 +45,16 @@ class _MapPageState extends State<MapPage> with TickerProviderStateMixin {
               zoom: 11,
               center: LatLng(14.7861079261, 121.032138605),
             ),
-            layers: [
+             key: layer[
               TileLayer(
                 urlTemplate:
                     "https://api.mapbox.com/styles/v1/anghelz/cla7wwzq8000k14sak5ymmdf6/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiYW5naGVseiIsImEiOiJjbDd2anV6NHUwYzh4M3ZveHdudGQ0dHU1In0.m5vUkL5mWj1JxmojY55ZCg",
-                additionalOptions: {
+                additionalOptions: const {
                   'mapStyleId': MapConstants.mapBoxStyleId,
                   'accessToken': MapConstants.mapBoxAccessToken,
                 },
               ),
+              
               MarkerLayer(
                 markers: [
                   for (int i = 0; i < mapMarkers.length; i++)
@@ -81,7 +84,7 @@ class _MapPageState extends State<MapPage> with TickerProviderStateMixin {
                               opacity: selectedIndex == i ? 1 : 0.5,
                               child: SvgPicture.asset(
                                 'assets/icons/map_marker.svg',
-                              ),
+                             ),
                             ),
                           ),
                         );
@@ -182,6 +185,7 @@ class _MapPageState extends State<MapPage> with TickerProviderStateMixin {
                   ),
                 );
               },
+        
             ),
           )
         ],
